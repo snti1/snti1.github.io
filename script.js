@@ -11,19 +11,20 @@ const table1Title = document.getElementById('table1-title');
 document.addEventListener('DOMContentLoaded', async () => {
     getExtraterrestres();
     getVisitas();
-    ExtraterrestresButton.style.display = 'none'; // Ocultar boton de extraterrestres
+    ExtraterrestresButton.style.display = 'none'; // ocultar boton de extraterrestres
 })
 
 PlanetasButton.addEventListener('click', async () => {
-    table1Title.textContent = 'Planetas'; // Cambiar titulo de la tabla a Planetas
-    ExtraterrestresButton.style.display = 'flex'; // Mostrar boton de extraterrestres
-    PlanetasButton.style.display = 'none'; // Ocultar botón de planetas
+    table1Title.textContent = 'Planetas'; // cambiar titulo de la tabla a Planetas
+    ExtraterrestresButton.style.display = 'inline-block'; // mostrar boton de extraterrestres
+    PlanetasButton.style.display = 'none'; // ocultar botón de planetas
     await getPlanets();
 })
+
 ExtraterrestresButton.addEventListener('click', async () => {
-    table1Title.textContent = 'Extraterrestres'; // Cambiar titulo de la tabla a Extraterrestres
-    PlanetasButton.style.display = 'flex'; // Mostrar boton de planetas
-    ExtraterrestresButton.style.display = 'none'; // Ocultar botón de extraterrestres
+    table1Title.textContent = 'Extraterrestres'; // cambiar titulo de la tabla a Extraterrestres
+    PlanetasButton.style.display = 'inline-block'; // mostrar boton de planetas
+    ExtraterrestresButton.style.display = 'none'; // ocultar botón de extraterrestres
     await getExtraterrestres();
 })
 

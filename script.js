@@ -1,9 +1,10 @@
 import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm'
 
-const supabaseUrl = 'https://knczxfhtigbfozieihby.supabase.co'
+const supabaseUrl = 'https://knczxfhtigbfozieihby.supabase.co' // url de la base de datos
 const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtuY3p4Zmh0aWdiZm96aWVpaGJ5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDk3ODQyMDIsImV4cCI6MjA2NTM2MDIwMn0.pNNe92o493lWxk6AQpfv-_HOqDyzg4s7fT5aLsgoWRc' // key anonima
 
-const supabase = createClient(supabaseUrl, supabaseKey)
+const supabase = createClient(supabaseUrl, supabaseKey) // inicializacion de un nuevo cliente de Supabase
+
 const PlanetasButton = document.getElementById('get-planetas-btn');
 const ExtraterrestresButton = document.getElementById('get-extraterrestres-btn');
 const table1Title = document.getElementById('table1-title');
@@ -32,7 +33,9 @@ ExtraterrestresButton.addEventListener('click', async () => {
         await supabase
         .from('Extraterrestre')
         .select('*')
-        .then(response => renderTable(response.data, "tabla-container"))
+        .then(response => renderTable(response.data, "tabla-container")) // se escribe la 
+                                                                         // respuesta en una 
+                                                                         // tabla
         .catch(error => {
             console.error('Error al obtener extraterrestres:', error)
             return []
